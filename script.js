@@ -101,9 +101,9 @@ console.log(pureAgeAbdul < pureAgeSarah); // less than (Represents : Boolean) Fo
 console.log(pureAgeAbdul >= pureAgeSarah); // Greater than or Equal to (Represents : Boolean)
 console.log(pureAgeAbdul <= pureAgeSarah); // less than or Equal to (Represents : Boolean)
 
-let y , z; // You can also assign these 2 variables at a time 
+let y, z; // You can also assign these 2 variables at a time 
 y = z = 20 + 30;
-console.log(y , z);
+console.log(y, z);
 
 console.log(currentYear - abdulBirth > currentYear - sarahbirth); // If javascript is a program that executes the code line by line, then why it does the sub operation of both sides then do comparison operator ? Think.
 // Its all about (Order of Precendence) for understanding this, you have to visit "MDN Operator Precendence" in which precendence means higher demand or value to do the operation first.
@@ -114,3 +114,62 @@ console.log(currentYear - abdulBirth > currentYear - sarahbirth); // If javascri
 
 let averageYear = (pureAgeAbdul - pureAgeSarah) / 2;
 console.log(averageYear);
+
+// Challenge No. 1
+
+let marksMass = 78;
+let marksHeight = 1.69;
+let johnMass = 92;
+let johnHeight = 1.95;
+const marksBMI = marksMass / marksHeight ** 2 + ' = ' + marksMass / (marksHeight * marksHeight);
+const johnBMI = johnMass / johnHeight ** 2 + ' = ' + johnMass / (johnHeight * johnHeight);
+const markHigherBMI = (marksBMI > johnBMI);
+// console.log(johnBMI); This is for Checking Purpose
+console.log(markHigherBMI);
+
+// if/else Statement:
+const age = 15;
+
+if (age >= 18) {
+    console.log(`Now, You are eligible to take the driving license`);
+}
+else {
+    let yearRistriction = 18 - age;
+    console.log(`Nah! You have to wait ${yearRistriction} years to get the driving license`)
+}
+
+
+let age_2 = 1991;
+let century;
+if (age_2 < 2000) {
+    century = `20th Century`;
+}
+else {
+    century = `21th Century`;
+}
+console.log(century);
+
+// Challenge No. 2
+
+let marksMass_1 = 78;
+let marksHeight_1 = 1.69;
+let johnMass_1 = 92;
+let johnHeight_1 = 1.95;
+const marksBMI_2 = marksMass_1 / marksHeight_1 ** 2 + ' = ' + marksMass_1 / (marksHeight_1 * marksHeight_1);
+const johnBMI_2 = johnMass_1 / johnHeight_1 ** 2 + ' = ' + johnMass_1 / (johnHeight_1 * johnHeight_1);
+if (marksBMI_2 > johnBMI_2) {
+    console.log("Who has the higher BMI ? " + "Mark's BMI is higher than John's!")
+}
+else {
+    console.log("Who has the higher BMI ? " + "John's BMI is higher than Mark's!")
+}
+
+
+// Manually Type Conversion:
+
+let year = "1991";
+console.log(year + 9); // This will concatenate the values
+console.log(Number(year) + 9); // This will add the value bcz the "Number function" can change the variable into number So, Answer is 2000
+console.log(typeof 2000); // In console you can check out the type of Number
+
+console.log(String(2000) , 2000)  // Here the "String Function" can change the number(2000) into string and individual (2000) represents number
