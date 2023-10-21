@@ -172,4 +172,202 @@ console.log(year + 9); // This will concatenate the values
 console.log(Number(year) + 9); // This will add the value bcz the "Number function" can change the variable into number So, Answer is 2000
 console.log(typeof 2000); // In console you can check out the type of Number
 
-console.log(String(2000) , 2000)  // Here the "String Function" can change the number(2000) into string and individual (2000) represents number
+console.log(String(2000), 2000)  // Here the "String Function" can change the number(2000) into string and individual (2000) represents number
+
+// Type Coercion (Automatic Do Hidden Conversion) :
+
+let year_2 = "1991" - 1; // Here you can see that in minus operator it doesn't concatinating and not giving the result of (NaN), Here javaScript doing coercion which means it can change the type conversion hiddenly (Change String into Number).
+console.log(year_2);
+console.log('23' * 2); // Same above statement for * 
+console.log('22' / 2); // Same above statement for /
+
+console.log("I'm " + 17 + " years old"); // Now here it also doing coercion, it is changing the Number(17) into String-(Hidden) So you see that it is more smarter than other languages 
+console.log('1' + 1); // But Type Coercion is basically failed in Addition(+) it will doing concatination 
+console.log(2 + 2 - "2" + "2" + 2) // 2+2-"2" makes 2 but + "2" will concate and it will continue concating all + values after (+ "2") until (-) come.
+
+// Question 
+
+let n = "99" + 9; // 999
+n = n - 9;       // 999 - 9
+console.log(n); // Answer 990
+
+// Falsy Values: 
+// There are 5 falsy values in JavaScript which are:  (0 , undefined , " " , NaN , False , null)
+
+console.log(Boolean(0));
+console.log(Boolean(""));
+console.log(Boolean(undefined));
+console.log(Boolean(false));
+console.log(Boolean(null));
+
+// These are truthy values :
+console.log(Boolean("Muqeet"));
+console.log(Boolean({})); // Where {} is (object) and it is truthy value
+
+// But we cant use this boolean operator as in top we have typed, this is a bad practice, And for Good Practice this boolean will automatically do type coercion in two scenarios 1) logical operator 2) logical context (means in if/else statement)
+
+let money = 0; // 0 is falsy value so here Javascript do Type Coercion
+if (money) {
+    console.log(`You have to save it for buying Koenigsegg`)
+}
+else {
+    console.log(`You have to came out from Matrix , Upgrading Yourself and to make money MAN!`)
+}
+
+// Double equal and Triple equal operator :
+
+const age_3 = "18";
+
+if (age_3 === 18) { } // Here triple equal means it is a strict operator (it will not print the value if a value is in string bcz the number after operator is Number(18) so if we put in age_3 as '18' so this is a string which means it can avoid this)
+console.log(`You just became an adult :D (strict)`);
+if (age_3 === 18) { } // Here it can avoid bcz on left side it is a string (only if when you put the number ('18') in above variable of age_3)
+console.log(`You just became an adult :D (loose)`);
+
+// But it cannot working due to some bugs here is another example below;
+
+console.log(5 === 5);      // true
+console.log(5 === '5');    // false (data type mismatch)
+console.log(0.1 + 0.2 === 0.3); // false (precision error means [floating-point errors])
+
+const obj1 = { prop: 'value' };
+const obj2 = { prop: 'value' };
+console.log(obj1 === obj2); // false (different object references)
+
+// ------------------------------------------------------------------------------------------------------------------------- //
+console.log(5 == 5);       // true
+console.log(5 == '5');     // true (type coercion)
+console.log(0.1 + 0.2 == 0.3); // False (precision error means [floating-point errors])
+console.log(null == undefined); // true
+console.log('' == 0);       // true (type coercion)
+
+// ------------------------------------------------------------------------------------------------------------------------- //
+
+const favourite = +prompt(`What is your favourite number ?`); // Here + command does to print only numbers if you write alphabet in the prompt or anything else it will take output as NaN 
+console.log(favourite);
+console.log(typeof favourite);
+
+if (favourite === 69) {
+    console.log(`COOL! That's what i thought`);
+}
+else if (favourite === favourite) {
+    console.log(`Cool! ${favourite} is best number \n Why not 69 ?`); // Else if means (or or or) 
+}
+else {
+    console.log(`Enter a Valid Number`);
+}
+
+// There is also an operator of !== which means not equal to 
+
+// Boolean operators : &&(if anyone variable is false then result is false),  ||(if all variables are false then the result is false otherwise true ) !(invert the property, if variable is false then result is true and vice-versa)
+
+const hasDrivingLicense = true;
+const hasGoodVision = true;
+const isTired = false;
+
+console.log(hasDrivingLicense && hasGoodVision);
+console.log(hasDrivingLicense || hasGoodVision);
+console.log(!hasDrivingLicense);
+
+if (hasDrivingLicense && hasGoodVision && !isTired) {
+    console.log(`He/She is able to Drive!`)
+}
+else {
+    console.log(`Someone should drive bcz we dont want to die ☠️`)
+}
+
+// Challenge No. 3
+
+const dolphin = 96 + 108 + 89 / 3;
+const koalas = 88 + 91 + 110 / 3;
+console.log(dolphin, koalas);
+
+if (dolphin > koalas) {
+    console.log(`Dolphin wins the trophy`);
+}
+else if (dolphin < koalas) {
+    console.log(`Koalas wins the trophy`);
+}
+else if (dolphin === koalas) {
+    console.log(`No one wins the trophy bcz of draw!`);
+}
+
+// ----------------------------------------------------------------------------------------------------------------------- //
+
+const dolphin_2 = 97 + 112 + 101 / 3;
+const koalas_2 = 109 + 95 + 123 / 3;
+console.log(dolphin_2, koalas_2);
+
+if (dolphin_2 > koalas_2 && dolphin_2 >= 100) {
+    console.log(`Dolphin wins the trophy`);
+}
+else if (dolphin_2 < koalas_2 && koalas_2 >= 100) {
+    console.log(`Koalas wins the trophy`);
+}
+
+// ----------------------------------------------------------------------------------------------------------------------- //
+
+const dolphin_3 = 95 / 3;
+const koalas_3 = 95 / 3;
+console.log(dolphin_3, koalas_3);
+
+if (dolphin_3 === koalas_3 && dolphin_3, koalas_3 >= 100) {
+    console.log(`No one wins the trophy bcz of draw!`);
+}
+else {
+    console.log(`Anyone have to gain score atleat 100`)
+}
+
+// Switch Statement :
+// It is the type of statement which totally work just like if/else statement, and it is basically used for many condition to get rid of (else if) statement
+
+const day = 'Sunday';
+
+switch (day) {
+    case 'Monday':
+        console.log(`Preparing Notes for Assignment`);
+        break; // if we dont apply break it will continue executing the lines means (Tuesday case)
+    case 'Tuesday':
+        console.log(`Doing Assignment`);
+        break;
+    case 'Wednesday':
+        console.log(`Preparing for Practical`);
+        break;
+    case 'Thursday':
+        console.log(`Practicing our courses`);
+        break;
+    case 'Friday':
+        console.log(`Struggle from getting out of Matrix`);
+        console.log(`Prepare for Namaz`);
+        break;
+    case 'Saturday':
+    case 'Sunday':
+        console.log(`Enjoy the weekend with homies and friends`); // Now here we simply say that if the user type sunday or saturday it will gave the result of console.log
+        break;
+    default:
+        console.log(`Enter a valid day!`)
+        break;
+}
+
+// Expression and Statement :
+
+// Expression :
+// This is a term that result the values at its own
+
+4 + 5
+1991
+true && false || !false
+
+// Statement :
+// This is a term that does not gave result at its own, so it depends on condition (Ex: if/else switch etc)
+
+let num_2 = 20; // const doesn't work in this :)
+if (num_2 > 18 ) {
+    console.log(`You have chosen greater number`);
+}
+
+// In a simpler way the (words) are expression and (sentence) is a statement
+
+console.log(`you number is ${num_2}`); // In template literals you cant put the all block of if/else code bcz javasvript knows it is a statement, and the whole template literal is basically an expression
+
+// The Conditional (Ternary) operator:
+
