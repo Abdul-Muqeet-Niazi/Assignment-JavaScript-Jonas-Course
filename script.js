@@ -371,3 +371,25 @@ console.log(`you number is ${num_2}`); // In template literals you cant put the 
 
 // The Conditional (Ternary) operator:
 
+const age_4 = 10;
+age_4 >= 18 ? console.log(`Now you are an adult :D`) : console.log(`You have to wait ${18 - age_4} years to become an adult`); // Here (?) is "if" and (:) is "else" but you cant input again ratio sign and that is used for quick decisions
+// Or
+let age_5 = age_4 >= 18 ? `Now you are an adult :D` : `You have to wait ${18 - age_4} years to become an adult`;
+console.log(age_5);
+// Or
+console.log(``)
+
+// Original method of if/else:
+if (age_4 >= 18) {
+    console.log(`Now you are an adult :D`);
+}
+else {
+    console.log(`You have to wait ${18 - age_4} years to become an adult`);
+}
+
+// Challenge No. 4:
+
+const bill = 430;
+const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2; 
+console.log (`The bill was ${bill}, the tip was ${tip}%, and the total value is ${bill + tip}, but you have to pay only ${bill}.`);
+
